@@ -1,0 +1,76 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:DataTypes="clr-namespace:PebbleShared.DataTypes;assembly=PebbleShared" x:Class="PebbleClient.TransactionInput"
+        Title="Transaction" Height="399" Width="482" ResizeMode="CanMinimize" Background="#FF44743C" WindowStartupLocation="CenterScreen">
+    <StackPanel HorizontalAlignment="Center" Margin="-18,10,-18,2" VerticalAlignment="Center">
+        <Grid HorizontalAlignment="Center" Height="299" Margin="0,0,0,16" VerticalAlignment="Center" Width="428">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFADFFA9" Offset="0"/>
+                    <GradientStop Color="#FF5C855A" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Cardholder Name" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" RenderTransformOrigin="0.447,0.3"/>
+            <Label Content="Expiration Date" HorizontalAlignment="Center" Margin="0" Grid.Row="1" VerticalAlignment="Center"/>
+            <Label Content="Card Brand" HorizontalAlignment="Center" Margin="40.5,2" Grid.Row="2" VerticalAlignment="Center"/>
+            <Label Content="Password" HorizontalAlignment="Center" Margin="40.5,2" Grid.Row="3" VerticalAlignment="Center"/>
+            <Label Content="Card Number" HorizontalAlignment="Center" Margin="40.5,2" Grid.Row="4" VerticalAlignment="Center"/>
+            <Label Content="Card Type" HorizontalAlignment="Center" Margin="40.5,2" Grid.Row="5" VerticalAlignment="Center"/>
+            <TextBox x:Name="NameBox" Grid.Column="1" HorizontalAlignment="Center" Height="22" Margin="10,6" TextWrapping="Wrap" VerticalAlignment="Center" Width="243"/>
+            <StackPanel Grid.Column="1" Margin="0" Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBox x:Name="Month" HorizontalAlignment="Center" Height="22" Margin="0" TextWrapping="Wrap" VerticalAlignment="Center" Width="42" MaxLines="1" MaxLength="2"/>
+                <Label Content="/" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox x:Name="Year" HorizontalAlignment="Center" Height="22" TextWrapping="Wrap" VerticalAlignment="Center" Width="54" Margin="0" MaxLines="1" MaxLength="4"/>
+            </StackPanel>
+            <ComboBox x:Name="CardBrandComboBox" Grid.Column="1" HorizontalAlignment="Center" Margin="0" Grid.Row="2" VerticalAlignment="Center" Width="121">
+                <ComboBox.DataContext>
+                    <DataTypes:Card/>
+                </ComboBox.DataContext>
+                <ComboBoxItem Content="Visa"/>
+                <ComboBoxItem Content="Mastercard"/>
+                <ComboBoxItem Content="American Express"/>
+            </ComboBox>
+            <PasswordBox x:Name="PasswordBox" Grid.Column="1" HorizontalAlignment="Center" Margin="0" Grid.Row="3" VerticalAlignment="Center" Width="120" MaxLength="6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="CardNumberBox" Grid.Column="1" HorizontalAlignment="Center" Height="23" Margin="0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Center" Width="180"/>
+            <ComboBox x:Name="CardTypeComboBox" Grid.Column="1" HorizontalAlignment="Center" Margin="0" Grid.Row="5" VerticalAlignment="Center" Width="120">
+                <ComboBox.BindingGroup>
+                    <BindingGroup/>
+                </ComboBox.BindingGroup>
+                <ComboBoxItem Content="Magnetic Strip"/>
+                <ComboBoxItem Content="MicroChip"/>
+            </ComboBox>
+            <Label Content="Transaction Value" HorizontalAlignment="Center" Margin="0" Grid.Row="6" VerticalAlignment="Center"/>
+            <StackPanel x:Name="ValueStackPanel" Grid.Column="1" Margin="0" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+                <Label Content="R$" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox x:Name="TransactionValueBox" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" VerticalAlignment="Center" Width="120"/>
+            </StackPanel>
+            <Label Content="Monthly Installments" HorizontalAlignment="Center" Margin="0" Grid.Row="7" VerticalAlignment="Center"/>
+            <TextBox x:Name="InstallmentsBox" Grid.Column="1" HorizontalAlignment="Center" Height="23" Margin="0" Grid.Row="7" TextWrapping="Wrap" VerticalAlignment="Center" Width="38"/>
+            <Label Content="Transaction Type" HorizontalAlignment="Center" Grid.Row="8" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <ComboBox x:Name="TransactionTypeBox" Grid.Column="1" HorizontalAlignment="Center" Margin="0" Grid.Row="8" VerticalAlignment="Center" Width="120">
+                <ComboBoxItem Content="Credit"/>
+                <ComboBoxItem Content="Debit"/>
+            </ComboBox>
+        </Grid>
+        <StackPanel Margin="0" Orientation="Horizontal" Height="37" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="ConfirmButton" Content="Confirm Transaction" Margin="16,0" Padding="8,1" Click="ConfirmButton_Click"/>
+            <Button x:Name="CancelButton" Content="Cancel" Margin="16,0" Padding="16,1" Click="CancelButton_Click"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

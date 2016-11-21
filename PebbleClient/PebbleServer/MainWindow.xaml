@@ -1,0 +1,15 @@
+﻿<Window x:Name="Main_Window" x:Class="PebbleServer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Pebble Transaction Server" Height="350" Width="525">
+    <Grid Background="#FF3C6340">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="205*"/>
+            <RowDefinition Height="51*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Pebble Server" HorizontalAlignment="Center" Margin="137,3" VerticalAlignment="Center" FontWeight="Bold" FontSize="36"/>
+        <StackPanel HorizontalAlignment="Center" Margin="0" Grid.Row="2" VerticalAlignment="Center" Orientation="Horizontal"/>
+        <TextBox x:Name="TextBox" Margin="8" Grid.Row="1" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" IsReadOnly="True"/>
+    </Grid>
+</Window>

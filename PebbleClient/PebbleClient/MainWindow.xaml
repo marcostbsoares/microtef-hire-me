@@ -1,0 +1,26 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Properties="clr-namespace:PebbleClient.Properties" x:Name="MainWindow1" x:Class="PebbleClient.MainWindow"
+        Title="Pebble Payment Client" Height="222" Width="525" WindowStartupLocation="CenterScreen" Margin="10">
+    <Grid Background="#FFA6F09F" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="70" VerticalAlignment="Center" RenderTransformOrigin="0.25,0.82" Margin="10,10,0,0" Background="#FFCFFFCA">
+            <Label Content="Pebble Payment Client" Margin="16,0" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Background="{x:Null}"/>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="54" Margin="0" Grid.Row="1" VerticalAlignment="Center" Width="364">
+            <StackPanel HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" RenderTransformOrigin="-0.66,0.78" Orientation="Horizontal" ScrollViewer.VerticalScrollBarVisibility="Disabled" Background="#FFCAFFCD">
+                <Button x:Name="TransactionButton" Content="New Transaction" Margin="16" HorizontalAlignment="Center" MinWidth="150" Click="Button_Click"/>
+                <Button x:Name="HistoryButton" Content="Transaction History" Margin="16" HorizontalAlignment="Center" MinWidth="150" Click="Button_Click_1"/>
+            </StackPanel>
+        </Border>
+        <Label Content="v1.0" HorizontalAlignment="Right" Grid.Row="1" VerticalAlignment="Bottom" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom">
+            <Label.DataContext>
+                <Properties:Settings/>
+            </Label.DataContext>
+        </Label>
+    </Grid>
+</Window>
